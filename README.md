@@ -1,53 +1,37 @@
-﻿# CSV ⇄ JSON Converter (C# Console Tool)
+# CsvJsonConverter — CSV ⇄ JSON Converter (C# Console Tool)
 
-## Problem
-Many teams need a fast way to convert and clean data files
-between CSV and JSON formats for reports, automation or integrations.
+Консольная утилита на C# для конвертации данных между форматами CSV и JSON.
 
-## Solution
-A lightweight C# console tool that converts CSV ↔ JSON
-and performs basic data cleaning.
+Проект реализован с использованием многослойной архитектуры:
+Domain / Application / Infrastructure.
 
-## Features
-- CSV to JSON conversion
-- JSON to CSV conversion
-- Removes empty rows
-- Trims whitespace
-- Simple command-line interface
+## Возможности
+- Конвертация CSV → JSON
+- Конвертация JSON → CSV
+- Работа с файлами через консоль (CLI)
+- Чистая архитектура, легко расширяется
 
-## Usage
+## Пример использования
 
-### CSV to JSON
-dotnet run -- csv2json input.csv output.json
+```bash
+CsvJsonConverter.exe csv-to-json input.csv output.json
+CsvJsonConverter.exe json-to-csv input.json output.csv
+```
 
-### JSON to CSV
-dotnet run -- json2csv input.json output.csv
+## Архитектура проекта
+- **Domain** — бизнес-модели и интерфейсы
+- **Application** — сценарии использования и логика приложения
+- **Infrastructure** — работа с файлами и форматами данных
+- **Program.cs** — точка входа приложения
 
-## Input formats
-CSV:
-Name,Age
-Alex,30
-Maria,25
 
-JSON:
-[
-  { "Name": "Alex", "Age": "30" },
-  { "Name": "Maria", "Age": "25" }
-]
-
-## Use cases
-- Data preparation
-- Automation pipelines
-- Reports
-- API integrations
-
-## Tech stack
+## Технологии
 - C#
 - .NET
-- Console Application
+- System.Text.Json
 
-## Extensibility
-The project is designed for easy extension:
-- custom delimiters
-- additional cleaning rules
-- Excel / API support
+---
+
+## Назначение проекта
+Проект создан как основа для automation-инструментов и может быть
+адаптирован под реальные бизнес-задачи (обработка данных, интеграции, отчёты).
