@@ -1,37 +1,66 @@
-# CsvJsonConverter — CSV ⇄ JSON Converter (C# Console Tool)
+# CsvJsonConverter – Automation-Ready CSV ⇄ JSON CLI Tool (C#)
 
-Консольная утилита на C# для конвертации данных между форматами CSV и JSON.
+A lightweight C# command-line tool designed for data automation workflows.
 
-Проект реализован с использованием многослойной архитектуры:
+This utility enables fast and reliable conversion between CSV and JSON formats,
+making it suitable for scripting, batch processing, and system integrations.
+
+Built using clean layered architecture:
 Domain / Application / Infrastructure.
 
-## Возможности
-- Конвертация CSV → JSON
-- Конвертация JSON → CSV
-- Работа с файлами через консоль (CLI)
-- Чистая архитектура, легко расширяется
+--
 
-## Пример использования
+## 🚀 Designed for Automation
 
-```bash
-CsvJsonConverter.exe csv-to-json input.csv output.json
-CsvJsonConverter.exe json-to-csv input.json output.csv
-```
+This tool is built with automation scenarios in mind:
 
-## Архитектура проекта
-- **Domain** — бизнес-модели и интерфейсы
-- **Application** — сценарии использования и логика приложения
-- **Infrastructure** — работа с файлами и форматами данных
-- **Program.cs** — точка входа приложения
+- Integration into CI/CD pipelines
+- Data preprocessing before CRM/ERP imports
+- Batch transformations in Windows environments
+- Local scripting and scheduled jobs
+- Lightweight ETL-style workflows
+
+--
+
+## 📦 Download
+
+A ready-to-use Windows executable (.exe) is available
+in the Releases section.
+
+No .NET SDK installation required.
+
+Simply download and run.
+
+--
+
+## 🔧 Features
+
+- CSV → JSON conversion
+- JSON → CSV conversion
+- CLI-based execution
+- Structured error handling
+- Automatic removal of empty rows
+- Proper exit codes (0 = success, 1 = error)
+- Clean and extensible architecture
+
+--
+
+## ▶ Usage
+
+``bash
+CsvJsonConverter.exe csv2json input.csv output.json
+CsvJsonConverter.exe json2csv input.json output.csv
 
 
-## Технологии
-- C#
-- .NET
-- System.Text.Json
+Id,Product,Price
+1,Coffee,2.5
+2,Tea,1.8
 
----
+[
+  {
+    "Id": "1",
+    "Product": "Coffee",
+    "Price": "2.5"
+  }
+]
 
-## Назначение проекта
-Проект создан как основа для automation-инструментов и может быть
-адаптирован под реальные бизнес-задачи (обработка данных, интеграции, отчёты).
